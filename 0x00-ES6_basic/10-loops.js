@@ -2,8 +2,8 @@
 // ES6s for...of operator. And dont forget that var is not ES6-friendly.
 
 export default function appendToEachArrayValue(array, appendString) {
-  for (let arr of array) {
-    array[arr] = appendString + arr;
+  for (const arr of array) {
+    array[array.indexOf(arr)] = appendString + arr;
   }
 
   return array;
