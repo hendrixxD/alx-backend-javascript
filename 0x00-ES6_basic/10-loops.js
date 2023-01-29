@@ -1,9 +1,8 @@
-// Rewrite the function appendToEachArrayValue to use 
-// ES6s for...of operator. And dont forget that var is not ES6-friendly.
-
 export default function appendToEachArrayValue(array, appendString) {
-  for (const arr of array) {
-    array[array.indexOf(arr)] = appendString + arr;
+  // eslint-disable-next-line
+	for (const value of array) {
+    // eslint-disable-next-line
+		array[array.indexOf(value)] = appendString + value;
   }
 
   return array;
