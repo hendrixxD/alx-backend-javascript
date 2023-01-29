@@ -6,16 +6,9 @@ export function uploadPhoto() {
 }
 
 
-/*export function createUser() {
+export function createUser() {
 	return Promsise.resolve({
 		'firstName': 'Guillaume',
 		'lastName': 'Salva'
 	});
-}
-*/
-export createUser() => {
-        return Promsise.resolve({
-                'firstName': 'Guillaume',
-                'lastName': 'Salva'
-        });
 }
