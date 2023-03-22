@@ -45,21 +45,21 @@ function countStudents(fileName) {
   });
 }
 
-const app = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  if (req.url === '/') {
-    res.write('Hello Holberton School!');
-    res.end();
+const app = http.createServer((request, response) => {
+  response.statusCode = 200;
+  response.setHeader('Content-Type', 'text/plain');
+  if (request.url === '/') {
+    response.write('Hello Holberton School!');
+    response.end();
   }
-  if (req.url === '/`students') {
-    res.write('This is the list of our students\n');
+  if (request.url === '/students') {
+    response.write('This is the list of our students\n');
     countStudents(process.argv[2].toString()).then((output) => {
       const outString = output.slice(0, -1);
-      res.end(outString);
+      response.end(outString);
     }).catch(() => {
-      res.statusCode = 404;
-      res.end('Cannot load the database');
+      response.statusCode = 404;
+      response.end('Cannot load the database');
     });
   }
 });
