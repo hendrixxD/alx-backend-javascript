@@ -1,7 +1,8 @@
+const getListStudentIds = (myArray) => {
+  if (!Array.isArray(myArray)) {
+    return [];
+  }
+  return myArray.map((studentId) => studentId.id);
+};
 
- function getListStudentsIds(arg) {
-    // ruturns an array of ids from a list objects
-    if (arg !== Array) {
-        return [[]];
-    }
- }
+export default getListStudentIds;
